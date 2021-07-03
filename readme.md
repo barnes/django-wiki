@@ -5,7 +5,7 @@
 * Entry Page
 * Index Page
 * Search
-* ~~ New Page ~~
+* ~~New Page~~ 
 * Edit Page
 * Random Page
 * Markdown to HTML
