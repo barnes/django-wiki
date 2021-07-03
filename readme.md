@@ -2,12 +2,12 @@
 ## For CS50w Project 1, a Django based Wiki project.
 
 ### Tasks
-* Entry Page
-* Index Page
+* ~~Entry Page~~
+* ~~Index Page~~
 * Search
 * ~~New Page~~ 
-* Edit Page
-* Random Page
+* ~~Edit Page~~
+* ~~Random Page~~
 * Markdown to HTML
 
 ### Project Log
