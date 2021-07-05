@@ -6,6 +6,7 @@ from django import forms
 from django.urls import reverse
 from . import util
 import random
+from markdown2 import Markdown
 
 class NewEntryForm(forms.Form):
     title = forms.CharField(label="Entry Title")
@@ -14,7 +15,15 @@ class NewEntryForm(forms.Form):
 
 entryList = util.list_entries()
 
+lowerEntryList = util.list_entries()
+for i in range(len(lowerEntryList)):
+    lowerEntryList[i] = lowerEntryList[i].lower()
 
+print(lowerEntryList)
+print (lowerEntryList.index("git"))
+print(entryList[lowerEntryList.index("git")])
+
+markdowner = Markdown()
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -76,17 +85,15 @@ def add(request):
     })
 
 def search(request):
-    query = request.POST["q"]
+    query = request.POST["q"].lower()
     if request.method == "POST":
-        if query in entryList:
+        if query in lowerEntryList:
             return render(request, "encyclopedia/entry.html", {
                 "title": query,
-                "entry": util.get_entry(query)
+                "entry": util.get_entry(entryList[lowerEntryList.index(query)])
             })
         else:
-            res = [i for i in entryList if query in i]
-            print(query)
-            print(res)
+            res = [i for i in lowerEntryList if query in i]
             return render(request, "encyclopedia/search.html", {
                 "entries": res
             })

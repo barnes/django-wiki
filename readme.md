@@ -18,3 +18,8 @@ Core functionality is done. Can create, edit and view posts. Need to implement s
 
 ### 7.4.21
 Search function works, but needs improvement. Want 'enter' key to submit, case matching, etc. (Fireworks suck.)
+
+### 7.5.21
+Trying to make search better with case sensitivity removed. Convert list to lowercase, see if its in the lowercased list. If so, get the query from the original list at that same index...if I can get the index. All set!
+
+Going to put this project on pause for now, as the core functionality is there. Might return to spit and polish later. 
