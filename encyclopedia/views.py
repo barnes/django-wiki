@@ -11,8 +11,10 @@ class NewEntryForm(forms.Form):
     title = forms.CharField(label="Entry Title")
     entry = forms.CharField(label="Entry Content", widget=forms.Textarea)
 
+
 entryList = util.list_entries()
-print(entryList)
+
+
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -72,6 +74,24 @@ def add(request):
     return render(request, "encyclopedia/add.html", {
         "form": NewEntryForm()
     })
+
+def search(request):
+    query = request.POST["q"]
+    if request.method == "POST":
+        if query in entryList:
+            return render(request, "encyclopedia/entry.html", {
+                "title": query,
+                "entry": util.get_entry(query)
+            })
+        else:
+            res = [i for i in entryList if query in i]
+            print(query)
+            print(res)
+            return render(request, "encyclopedia/search.html", {
+                "entries": res
+            })
+
+
     
 
 
