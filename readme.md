@@ -4,11 +4,11 @@
 ### Tasks
 * ~~Entry Page~~
 * ~~Index Page~~
-* Search
+* ~~Search~~
 * ~~New Page~~ 
 * ~~Edit Page~~
 * ~~Random Page~~
-* Markdown to HTML
+* ~~Markdown to HTML~~
 
 ### Project Log
 #### 7.3.21
@@ -23,3 +23,7 @@ Search function works, but needs improvement. Want 'enter' key to submit, case m
 Trying to make search better with case sensitivity removed. Convert list to lowercase, see if its in the lowercased list. If so, get the query from the original list at that same index...if I can get the index. All set!
 
 Going to put this project on pause for now, as the core functionality is there. Might return to spit and polish later. 
+
+TODO:
+* Clean up search functionality. 
+* Do some new styling, maybe try to work with something like Tailwind?
